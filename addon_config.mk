@@ -29,15 +29,16 @@ common:
 	# include search paths, this will be usually parsed from the file system
 	# but if the addon or addon libraries need special search paths they can be
 	# specified here separated by spaces or one per line using +=
-	# ADDON_INCLUDES =
+	ADDON_INCLUDES = libs/OpenVR/headers src/ libs/OpenVR/src/ libs/OpenVR/src/vrcommon/
+	
 	
 	# any special flag that should be passed to the compiler when using this
 	# addon
-	# ADDON_CFLAGS =
+	ADDON_CFLAGS = -DPOSIX -DOSX
 	
 	# any special flag that should be passed to the linker when using this
 	# addon, also used for system libraries with -lname
-	ADDON_LDFLAGS = -lopenvr_api
+	#ADDON_LDFLAGS = -lopenvr_api
 	
 	# linux only, any library that should be included in the project using
 	# pkg-config
@@ -60,19 +61,38 @@ common:
 	# a specific platform
 	# ADDON_LIBS_EXCLUDE =
 
-	ADDON_INCLUDES_EXCLUDE = ..\..\..\addons\ofxOpenVR\libs
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\bin
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\bin\%
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\bin\%
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\lib
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\lib\%
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\lib\%
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples\%
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\unity_package
-	ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\unity_package\%
+	ADDON_INCLUDES_EXCLUDE = libs/OpenVR/bin/
+	ADDON_INCLUDES_EXCLUDE += libs/OpenVR/bin/%
+	ADDON_INCLUDES_EXCLUDE += libs/OpenVR/lib/%
+	ADDON_INCLUDES_EXCLUDE += libs/OpenVR/samples/%
+	ADDON_INCLUDES_EXCLUDE += libs/OpenVR/unity_package/%
 
-	ADDON_SOURCES_EXCLUDE = ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples
-	ADDON_SOURCES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples\%
-	
+    ADDON_LIBS_EXCLUDE = libs/OpenVR/samples/%
+    ADDON_LIBS_EXCLUDE += libs/OpenVR/unity_package/%
+
+	ADDON_SOURCES_EXCLUDE = libs/OpenVR/samples/%
+    ADDON_SOURCES_EXCLUDE += MX/%
+
+vs:
+    ADDON_INCLUDES_EXCLUDE = ..\..\..\addons\ofxOpenVR\libs
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\bin
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\bin\%
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\bin\%
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\lib
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\lib\%
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\lib\%
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples\%
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\unity_package
+    ADDON_INCLUDES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\unity_package\%
+
+    ADDON_SOURCES_EXCLUDE = ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples
+    ADDON_SOURCES_EXCLUDE += ..\..\..\addons\ofxOpenVR\libs\OpenVR\samples\%
+
+linux64:
+#    ADDON_SOURCES_EXCLUDE = libs/OpenVR/samples/%
+#    ADDON_SOURCES_EXCLUDE += libs/OpenVR/unity_package/%
+    ADDON_CFLAGS = -DPOSIX -DLINUX
+linux:
+    ADDON_CFLAGS = -DPOSIX -DLINUX
