@@ -34,7 +34,7 @@ common:
 	
 	# any special flag that should be passed to the compiler when using this
 	# addon
-	ADDON_CFLAGS = -DPOSIX -DOSX
+	#ADDON_CFLAGS = -DPOSIX -DOSX
 	
 	# any special flag that should be passed to the linker when using this
 	# addon, also used for system libraries with -lname
@@ -93,6 +93,12 @@ vs:
 linux64:
 #    ADDON_SOURCES_EXCLUDE = libs/OpenVR/samples/%
 #    ADDON_SOURCES_EXCLUDE += libs/OpenVR/unity_package/%
-    ADDON_CFLAGS = -DPOSIX -DLINUX
+    ADDON_CFLAGS = -DPOSIX -DLINUX -DLINUX64
 linux:
     ADDON_CFLAGS = -DPOSIX -DLINUX
+
+msys2:
+	ADDON_CFLAGS = -DVR_API_PUBLIC
+
+osx:
+	ADDON_CFLAGS = -DPOSIX -DOSX
