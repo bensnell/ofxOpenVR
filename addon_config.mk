@@ -29,7 +29,7 @@ common:
 	# include search paths, this will be usually parsed from the file system
 	# but if the addon or addon libraries need special search paths they can be
 	# specified here separated by spaces or one per line using +=
-	ADDON_INCLUDES = libs/OpenVR/headers src/ libs/OpenVR/src/ libs/OpenVR/src/vrcommon/
+	ADDON_INCLUDES = libs/OpenVR/headers libs/OpenVR/src/ libs/OpenVR/src/vrcommon/ src/
 	
 	
 	# any special flag that should be passed to the compiler when using this
@@ -98,7 +98,7 @@ linux:
     ADDON_CFLAGS = -DPOSIX -DLINUX
 
 msys2:
-	ADDON_CFLAGS = -DVR_API_PUBLIC
+	#ADDON_CFLAGS = 
 
 osx:
 	ADDON_CFLAGS = -DPOSIX -DOSX
