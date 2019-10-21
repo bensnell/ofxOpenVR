@@ -100,7 +100,7 @@ linux:
 
 msys2:
 	#ADDON_CFLAGS = 
-	ADDON_LDFLAGS = -L ../../../libs/OpenVR/bin/win32/ -lopenvr_api
+	ADDON_LDFLAGS = -L${OF_ROOT}/addons/ofxOpenVRTracker/libs/OpenVR/bin/win32/ -lopenvr_api
 
 osx:
 	ADDON_CFLAGS = -DPOSIX -DOSX
