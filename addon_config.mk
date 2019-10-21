@@ -69,7 +69,7 @@ common:
 
     ADDON_LIBS_EXCLUDE = libs/OpenVR/samples/%
     ADDON_LIBS_EXCLUDE += libs/OpenVR/unity_package/%
-    ADDON_LIBS_EXCLUDE += libs/OpenVR/bin/%
+    #ADDON_LIBS_EXCLUDE += libs/OpenVR/bin/%
 
 	ADDON_SOURCES_EXCLUDE = libs/OpenVR/samples/%
     ADDON_SOURCES_EXCLUDE += MX/%
