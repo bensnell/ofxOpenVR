@@ -29,7 +29,7 @@ common:
 	# include search paths, this will be usually parsed from the file system
 	# but if the addon or addon libraries need special search paths they can be
 	# specified here separated by spaces or one per line using +=
-	ADDON_INCLUDES = libs/OpenVR/headers libs/OpenVR/src/ libs/OpenVR/src/vrcommon/ src/
+	ADDON_INCLUDES = src/ libs/OpenVR/headers libs/OpenVR/src/ libs/OpenVR/src/vrcommon/
 	
 	
 	# any special flag that should be passed to the compiler when using this
@@ -69,6 +69,7 @@ common:
 
     ADDON_LIBS_EXCLUDE = libs/OpenVR/samples/%
     ADDON_LIBS_EXCLUDE += libs/OpenVR/unity_package/%
+    ADDON_LIBS_EXCLUDE += libs/OpenVR/bin/%
 
 	ADDON_SOURCES_EXCLUDE = libs/OpenVR/samples/%
     ADDON_SOURCES_EXCLUDE += MX/%
