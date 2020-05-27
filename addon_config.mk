@@ -94,7 +94,7 @@ vs:
 linux64:
 #    ADDON_SOURCES_EXCLUDE = libs/OpenVR/samples/%
 #    ADDON_SOURCES_EXCLUDE += libs/OpenVR/unity_package/%
-    ADDON_CFLAGS = -DPOSIX -DLINUX -DLINUX64
+	ADDON_CFLAGS = -DPOSIX -DLINUX -DLINUX64
 linux:
 	ADDON_CFLAGS = -DPOSIX -DLINUX
 
